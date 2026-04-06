@@ -34,6 +34,19 @@ int main()
 
         art_students.push_back(a2);
 
+	Physics_Student* p1 = new Physics_Student();
+
+	p1->setName("Gabe", "Ignacio");
+	p1->setGPA(4.0);
+	p1->setGraduationYear(2024);
+	p1->setGraduationSemester("Spring");
+	p1->setEnrolledYear(2020);
+	p1->setEnrolledSemester("Fall");
+	p1->setDegreeLevel("Grad");
+	p1->setConcentration("Biophysics");
+
+physics_students.push_back(p1);
+
 	for (int i = 0; i < art_students.size(); i++)
 {
     std::cout << art_students[i]->getFirstName() << " "
@@ -44,6 +57,15 @@ int main()
 	for (int i = 0; i < art_students.size(); i++)
 {
     delete art_students[i];
+}
+
+std::cout << "\nPhysics Students:\n";
+
+for (int i = 0; i < physics_students.size(); i++)
+{
+    std::cout << physics_students[i]->getFirstName() << " "
+              << physics_students[i]->getLastName() << " GPA: "
+              << physics_students[i]->getGPA() << std::endl;
 }
 
 
